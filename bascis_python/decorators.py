@@ -17,3 +17,22 @@ ans=cheakFunction(2,3)
 print(ans)
 
 #cacheing the arguments
+def cacheing(func):
+    cache={}
+    def wrapper(*args):
+        if(args in cache):
+            return cache[args]
+        result=func(*args)
+        cache[args]=result
+        return cache[args]
+        
+    return wrapper
+
+@cacheing
+def cacheingCheak(a,b):
+    time.sleep(3)
+    return a+b
+
+print(cacheingCheak(3,4))
+print(cacheingCheak(3,4))
+
