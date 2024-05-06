@@ -9,6 +9,7 @@ class Car:
         print(self.__brand,self.__model)
 my_car=Car("BMW","X5")
 my_car.data()
+
 # using constructor
 class Bike:
     def __init__(self,brand,model):
